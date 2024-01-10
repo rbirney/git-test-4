@@ -1,0 +1,61 @@
+{{> menu}}
+
+<section class="ui center aligned middle aligned segment">
+  <h2>Welcome to the Playlist App!</h2>
+    <p>
+      This app will allow users to create and maintain a collection of playlists.
+    </p>
+  
+    <img src="https://cdn.glitch.global/b453d3c5-d9bb-42c3-ac84-cfeadc638eab/HD-wallpaper-colors-of-music-bars-colorful-measure-sound-refection-abstract-lights-sparkle-beams-rays-bright-beat-color-beats-musical.jpg?v=1683397743824" class="ui centered image">
+  
+ 
+  <div class="ui five statistics" style="margin-top: 1em;">
+    
+    <div class="statistic">
+      <div class="value">
+        <i class="music icon"></i> 
+      </div>
+      <div class="label">
+        App Title: <br>
+        {{info.appTitle}}
+      </div>
+    </div>
+    
+    <div class="statistic">
+      <div class="value">
+        <i class="code branch icon"></i> 
+      </div>
+      <div class="label">
+        App Version: <br>
+        Version {{info.version}}
+      </div>
+    </div>    
+    <div class="statistic">
+      <div class="value">
+        <i class="map pin icon"></i> 
+      </div>
+      <div class="label">
+        Made in: <br>
+        {{info.location}}
+      </div>
+    </div>    
+    <div class="statistic">
+      <div class="value">
+        <i class="user icon"></i> 
+      </div>
+      <div class="label">
+        Created by: <br>
+        {{info.creators.0.name}}
+      </div>
+    </div> 
+    <div class="statistic">
+      <div class="value">
+        <i class="user plus icon"></i> 
+      </div>
+      <div class="label">
+        With help from: <br>
+        {{info.creators.1.name}}
+      </div>
+    </div> 
+  </div>
+</section>
