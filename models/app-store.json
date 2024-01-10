@@ -1,0 +1,17 @@
+{
+  "info": {
+    "appTitle": "Playlist Maker",
+    "version": "0.2",
+    "creators": [
+      {
+        "name": "Rosanne Birney",
+        "role": "Web Developer"
+      },
+      {
+        "name": "A.N. Other",
+        "role": "Web Developer"
+      }
+    ],
+    "location": "Waterford"
+  } 
+}

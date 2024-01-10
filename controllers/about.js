@@ -3,7 +3,13 @@ import logger from "../utils/logger.js";
 
 const about = {
   createView(request, response) {
-    response.send('About the Playlist App');   
+    logger.info("About page loading!");
+    
+    const viewData = {
+      title: "About the Playlist App"
+    };
+    
+    response.render('about', viewData);
   },
 };
 
