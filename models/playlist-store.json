@@ -1,0 +1,51 @@
+{
+  "playlistCollection": [
+    {
+      "id" : "01",
+      "title": "Beethoven Sonatas",
+      "songs": [
+        {
+          "id" : "04",
+          "title": "Piano Sonata No. 3",
+          "artist": "Beethoven"
+        },
+        {
+          "id" : "05",
+          "title": "Piano Sonata No. 7",
+          "artist": "Beethoven"
+        },
+        {
+          "id" : "06",
+          "title": "Piano Sonata No. 10",
+          "artist": "Beethoven"
+        }
+      ]
+    },
+    {
+      "id" : "02",
+      "title": "Beethoven Concertos",
+      "songs": [
+        {
+          "id" : "07",
+          "title": "Piano Concerto No. 0",
+          "artist": "Beethoven"
+        },
+        {
+          "id" : "08",
+          "title": "Piano Concerto No. 4",
+          "artist": "Beethoven"
+        },
+        {
+          "id" : "09",
+          "title": "Piano Concerto No. 6",
+          "artist": "Beethoven"
+        }
+      ]
+    },
+    {
+      "id" : "03",
+      "title": "Beethoven Unfinished Symphonies",
+      "songs": []
+    }
+  ]
+}
