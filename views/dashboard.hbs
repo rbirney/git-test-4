@@ -2,9 +2,91 @@
 
 <section class="ui left aligned middle aligned segment">
   
-    <h2>Playlist App Dashboard</h2>
-      <p>
-        Playlists will be displayed here
-      </p>
+  <h2>Playlist App Dashboard</h2>
+  
+  {{#unless playlists}}
+    <h3 class="ui message">
+      Start adding your playlists!
+    </h3>
+  {{/unless}}
+
+  {{#each playlists}}
+    <section class="ui left aligned middle aligned segment">
+
+      <h3 class="ui header">
+        {{title}}
+      </h3>
+      
+      {{#if songs}}
+        <p>
+          Total songs: {{songs.length}}
+        </p>
+      
+      {{else}}
+        <p>
+          Empty playlist!
+        </p>
+      {{/if}}
+      
+      <a href="/playlist/{{id}}"> View </a>
+    </section>
+  {{/each}}
 
 </section>
+
+<!-- 
+{{> menu id="dashboard"}}
+
+<section class="ui left aligned middle aligned segment">
+  
+  <h2>Playlist App Dashboard</h2>
+  
+  {{#unless playlists}}
+    <h3 class="ui message">
+      Start adding your playlists!
+    </h3>
+  {{/unless}}
+  
+  {{#each playlists}}
+  
+    <section class="ui left aligned middle aligned segment">
+
+      <h3 class="ui header">
+        {{title}}
+      </h3>      
+  
+      {{#if songs}}
+      
+        <table class="ui fixed striped table">
+          <thead>
+            <tr>
+              <th>Song</th>
+              <th>Artist</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each songs}}
+              <tr>
+                <td>
+                  {{title}}
+                </td>
+                <td>
+                  {{artist}}
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      
+        {{else}}
+          <h3 class="ui message">
+            Empty playlist!
+          </h3>
+      
+      {{/if}}
+      
+    </section>
+  
+  {{/each}}
+
+</section> -->
