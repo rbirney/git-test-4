@@ -5,25 +5,33 @@
       <tr>
         <th>Song</th>
         <th>Artist</th>
+        <th>Genre</th>
+        <th>Duration</th>
       </tr>
     </thead>
     <tbody>
       {{#each singlePlaylist.songs}}
         <tr>
           <td>
-            {{title}}
+            {{capitalise title}}
           </td>
           <td>
-            {{artist}}
+            {{capitalise artist}}
+          </td>
+          <td>
+            {{capitalise genre}}
+          </td>
+          <td>
+            {{duration}}
           </td>
         </tr>
       {{/each}}
     </tbody>
   </table>
 
-  {{else}}
-    <h3 class="ui message">
-      Empty playlist!
-    </h3>
+{{else}}
+  <h3 class="ui message">
+    Empty playlist!
+  </h3>
 
 {{/if}}
