@@ -1,31 +1,38 @@
-{{#if singlePlaylist.songs}}
+{{#if songs}}
 
-  <table class="ui fixed striped table">
+  <table class="ui striped table">
     <thead>
       <tr>
-        <th>Song</th>
-        <th>Artist</th>
-        <th>Genre</th>
-        <th>Duration</th>
+        <th class="four wide">Song</th>
+        <th class="four wide">Artist</th>
+        <th class="four wide">Genre</th>
+        <th class="four wide">Duration</th>
+        <th> </th>
+        <th> </th>
       </tr>
     </thead>
     <tbody>
-      {{#each singlePlaylist.songs}}
-        <tr>
-          <td>
-            {{capitalise title}}
-          </td>
-          <td>
-            {{capitalise artist}}
-          </td>
-          <td>
-            {{capitalise genre}}
-          </td>
-          <td>
-            {{duration}}
-          </td>
-        </tr>
+      
+      {{#each songs}}
+      
+        {{> listOneSong playlistId=../id}}
+        {{> editsong playlistId=../id}}
+                
+      
+        <script>
+          $(document).ready(function(){
+            $("#showEdit{{@index}}").click(function(){
+              $("#song{{@index}}").hide();
+              $("#edit{{@index}}").show();
+            });
+            $("#hideEdit{{@index}}").click(function(){
+              $("#song{{@index}}").show();
+              $("#edit{{@index}}").hide();
+            });
+          });
+        </script>
       {{/each}}
+    
     </tbody>
   </table>
 

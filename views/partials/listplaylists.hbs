@@ -11,29 +11,43 @@
   {{#each playlists}}
     <section class="ui left aligned middle aligned segment">
 
-      <h3 class="ui header">
-        {{uppercase title}}
-      </h3>
+      <form class="ui form" action="/dashboard/updateplaylist/{{id}}" method="POST">
+        
+        <h3 class="ui header">
+          <input type="text" name="title" autofocus required
+            title="Please include a valid Title" placeholder="Title" value="{{title}}" />
+        </h3>
 
-      <p>
-        <i class="music icon"></i>
-        {{#if songs}}
-          Total songs:
-          {{songs.length}}
+        <p>
+          <i class="music icon"></i>
+          {{#if songs}}
+            Total songs:
+            {{songs.length}}
 
-        {{else}}
-          Empty playlist!
-        {{/if}}
+          {{else}}
+            Empty playlist!
+          {{/if}}
 
-        {{#if date}}
-          <br />
-          <i class="calendar alternate outline icon"></i>
-          Created on
-          <i>{{formatDate date}}</i>
-        {{/if}}
-      </p>
+          {{#if date}}
+            <br />
+            <i class="calendar alternate outline icon"></i>
+            Created on
+            <i>{{formatDate date}}</i>
+          {{/if}}
+        </p>
 
-      <a href="/playlist/{{id}}"> View </a>
+        <a href="/playlist/{{id}}" class="ui icon button">
+          <i class="open folder icon"></i>
+        </a>
+        <a href="/dashboard/deleteplaylist/{{id}}" class="ui icon button"> 
+          <i class="trash icon"></i>
+        </a>
+<!--         <button class="ui submit icon button">
+          <i class="ui pencil icon"></i>
+        </button> -->
+
+      </form>
+      
     </section>
   {{/each}}
 

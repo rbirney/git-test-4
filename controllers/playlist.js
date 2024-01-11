@@ -13,7 +13,7 @@ const playlist = {
       title: "Playlist",
       singlePlaylist: playlistStore.getPlaylist(playlistId),
     };
-
+    logger.debug(viewData);
     response.render("playlist", viewData);
   },
 
@@ -30,6 +30,29 @@ const playlist = {
     playlistStore.addSong(playlistId, newSong);
     response.redirect("/playlist/" + playlistId);
   },
+  
+  deleteSong(request, response) {
+    const playlistId = request.params.id;
+    const songId = request.params.songid;
+    logger.debug(`Deleting Song  $(songId} from Playlist ${playlistId}`);
+    playlistStore.removeSong(playlistId, songId);
+    response.redirect('/playlist/' + playlistId);
+  },
+  
+  updateSong(request, response) {
+    const playlistId = request.params.id;
+    const songId = request.params.songid;
+    logger.debug("updating song " + songId);
+    const updatedSong = {
+      id: songId,
+      title: request.body.title,
+      artist: request.body.artist,
+      genre: request.body.genre,
+      duration: request.body.duration
+    };
+    playlistStore.editSong(playlistId, songId, updatedSong);
+    response.redirect('/playlist/' + playlistId);
+  }
 };
 
 export default playlist;
