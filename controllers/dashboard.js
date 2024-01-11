@@ -29,6 +29,24 @@ const dashboard = {
     playlistStore.addPlaylist(newPlaylist);
     response.redirect('/dashboard');
   },
+  
+  deletePlaylist(request, response) {
+    const playlistId = request.params.id;
+    logger.debug(`Deleting Playlist ${playlistId}`);
+    playlistStore.removePlaylist(playlistId);
+    response.redirect("/dashboard");
+  },
+  
+  updatePlaylist(request, response) {
+    const playlistId = request.params.id;
+    logger.debug("updating playlist " + playlistId);
+    const updatedPlaylist = {
+      id: playlistId,
+      title: request.body.title
+    };
+    playlistStore.editPlaylist(playlistId, updatedPlaylist);
+    response.redirect('/dashboard/');
+  }
 };
 
 export default dashboard;

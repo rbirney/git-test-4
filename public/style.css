@@ -12,3 +12,7 @@ body {
   margin: 2em;
   background-color: lightgrey;
 }
+
+.hide{
+  display: none;
+}
